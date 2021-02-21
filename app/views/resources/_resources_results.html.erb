@@ -1,0 +1,19 @@
+<% @resources.each do |resource| %>
+  <% if resource[:resource_type] == "book" %>
+  <div class="m-8 lg:m-4 p-8 lg:p-4 bg-white-light text-xl lg:text-sm tracking-wider flex items-center rounded-sm">
+    <div class="flex items-center mr-6"><p class="p-2 text-base lg:text-xs uppercase font-light bg-white-dark"><%= resource[:language] %></p></div>
+    <div class="tracking-wider">
+      <p class="uppercase font-medium"><%= resource[:title] %></p>
+      <p class="font-light"><%= resource[:author] %></p>
+    </div>
+  </div>
+  <% else %>
+  <div class="m-8 lg:m-4 p-8 lg:p-4 bg-white-light text-xl lg:text-sm tracking-wider flex items-center rounded-sm">
+    <div class="flex items-center mr-6"><p class="p-2 text-base lg:text-xs uppercase font-light bg-white-dark"><%= resource[:language] %></p></div>
+    <div class="font-medium uppercase tracking-wider">
+      <p><%= resource[:title] %></p>
+      <p class="text-xl lg:text-base">🎬 <a href="<%= resource[:url] %>" class="ml-4 uppercase tracking-wider underline" target="_blank">Watch here</a></p>
+    </div>
+  </div>
+  <% end %>
+<% end  %>

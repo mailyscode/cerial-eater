@@ -1,0 +1,29 @@
+<div class="m-12 lg:m-0 bg-fixed bg-cover bg-center bg-resources bg-no-repeat h-screen lg:h-auto flex flex-col">
+
+<div class="lg:mx-56">
+  <h1 class="pt-24 lg:pt-10 text-center text-7xl lg:text-4xl font-display text-white-light font-bold">Cerial Resources</h1>
+  <div class="p-8 w-full text-2xl lg:text-lg text-center text-white-light tracking-wider">
+    <p>Resources to yield some more <span class="font-bold">seeds of ideas</span> into our mind</p>
+  </div>
+
+<!-- Resources menu -->
+  <div class="mb-8 lg: mx-72 px-16 flex justify-around">
+    <%= link_to 'Books', resources_path(resource_type: 'book'), class:"py-1 px-10 flex items-center border-4 border-white-light border-opacity-100 rounded-full text-3xl lg:text-xl text-white-light font-display" %>
+    <%= link_to 'Documentaries', resources_path(resource_type: 'documentary'), class:"py-1 px-10 flex items-center border-4 border-white-light border-opacity-100 rounded-full text-3xl lg:text-xl text-white-light font-display" %>
+  </div>
+
+<!-- Resources results -->
+  <div class="flex-1 overflow-y-auto lg:grid lg:grid-cols-3 lg:gap-4">
+    <%= render 'resources_results', resources: @resources %>
+  </div>
+</div>
+
+
+<!-- Homepage button -->
+  <div class="py-12 flex justify-center">
+    <%= link_to 'Homepage', root_path, class: "text-2xl xl:text-base text-white-light hover:text-white-darker" %>
+    <div class="ml-3 xl:ml-1 w-6 xl:w-3 transform rotate-12 flex content-center">
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 51"><path d="M21.696 12.648a8.984 8.984 0 00-4.066 4.136l1.35-4.105a9.052 9.052 0 003.692-12L22.329 0l-.641.324a9.053 9.053 0 00-4.177 11.792l-1.288 3.918a9.065 9.065 0 00-6.116-9.988l-.682-.224-.237.723a9.065 9.065 0 005.773 11.43l.563.185-2.208 6.719a9.052 9.052 0 00-6.121-9.973l-.682-.224-.238.723a9.065 9.065 0 005.774 11.43l.563.184-2.209 6.719a9.051 9.051 0 00-6.12-9.973l-.683-.224-.237.723a9.065 9.065 0 005.773 11.43l.563.184-2.209 6.72a9.052 9.052 0 00-6.12-9.972L.688 32.4l-.238.723a9.065 9.065 0 005.774 11.43l.563.185-1.496 4.55a.785.785 0 001.492.49l1.496-4.55.605.2a9.055 9.055 0 0011.43-5.775l.237-.722-.682-.225a9.053 9.053 0 00-10.977 4.657l2.3-6.994.604.198a9.056 9.056 0 0011.43-5.774l.237-.723-.681-.224a9.053 9.053 0 00-10.978 4.656l2.3-6.994.605.199a9.055 9.055 0 0011.43-5.774l.237-.722-.682-.224a9.053 9.053 0 00-10.977 4.656l2.3-6.994.604.199a9.055 9.055 0 0011.43-5.774l.238-.722-.682-.225a8.995 8.995 0 00-6.91.52z" fill="#fff"/></svg>
+    </div>
+  </div>
+</div>

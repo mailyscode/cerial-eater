@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CropControllerTest < ActionDispatch::IntegrationTest
+class CropsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
