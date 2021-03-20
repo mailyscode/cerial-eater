@@ -11,13 +11,13 @@ require("channels")
 import '../stylesheets/application.scss';
 import '../controllers'
 
-import initSearch from './fetch_recipes'
 import { scrollNavbar } from '../components/recipe_navbar';
+import { initSearch } from './fetch_recipes'
 
 
 document.addEventListener('turbolinks:load', () => {
-  initSearch();
   scrollNavbar();
+  initSearch();
 })
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

@@ -5,18 +5,17 @@ require 'amazing_print'
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
-    # @recipes = @recipes.where(cereal: params[:cereal]) if params[:cereal].present?
   end
 
   def rice
-    url = 'https://www.allrecipes.com/search/?wt=rice'
+    url = 'https://www.allrecipes.com/search/results/?search=rice'
     doc = Nokogiri::HTML(open(url), nil, 'utf-8')
-    @recipes = doc.search('.fixed-recipe-card').first(12).map do |element|
+    @recipes = doc.search('.card__recipe').first(12).map do |element|
       {
-        name: element.search('span.fixed-recipe-card__title-link').text,
-        description: element.search('.fixed-recipe-card__description').text,
-        image_url: element.search('.fixed-recipe-card__img').attr('data-original-src').text,
-        url: element.search('a.fixed-recipe-card__title-link').attr('href').text,
+        name: element.search('.card__title').text,
+        description: element.search('.card__summary').text,
+        image_url: element.search('.lazy-image').attr('data-src').text,
+        url: element.search('a.card__titleLink').attr('href').text,
         cereal: 'rice'
       }
     end
@@ -28,14 +27,14 @@ class RecipesController < ApplicationController
   end
 
   def wheat
-    url = 'https://www.allrecipes.com/search/?wt=wheat'
+    url = 'https://www.allrecipes.com/search/results/?search=wheat'
     doc = Nokogiri::HTML(open(url), nil, 'utf-8')
-    @recipes = doc.search('.fixed-recipe-card').first(12).map do |element|
+    @recipes = doc.search('.card__recipe').first(12).map do |element|
       {
-        name: element.search('span.fixed-recipe-card__title-link').text,
-        description: element.search('.fixed-recipe-card__description').text,
-        image_url: element.search('.fixed-recipe-card__img').attr('data-original-src').text,
-        url: element.search('a.fixed-recipe-card__title-link').attr('href').text,
+        name: element.search('.card__title').text,
+        description: element.search('.card__summary').text,
+        image_url: element.search('.lazy-image').attr('data-src').text,
+        url: element.search('a.card__titleLink').attr('href').text,
         cereal: 'wheat'
       }
     end
@@ -47,14 +46,14 @@ class RecipesController < ApplicationController
   end
 
   def corn
-    url = 'https://www.allrecipes.com/search/?wt=corn'
+    url = 'https://www.allrecipes.com/search/results/?search=corn'
     doc = Nokogiri::HTML(open(url), nil, 'utf-8')
-    @recipes = doc.search('.fixed-recipe-card').first(12).map do |element|
+    @recipes = doc.search('.card__recipe').first(12).map do |element|
       {
-        name: element.search('span.fixed-recipe-card__title-link').text,
-        description: element.search('.fixed-recipe-card__description').text,
-        image_url: element.search('.fixed-recipe-card__img').attr('data-original-src').text,
-        url: element.search('a.fixed-recipe-card__title-link').attr('href').text,
+        name: element.search('.card__title').text,
+        description: element.search('.card__summary').text,
+        image_url: element.search('.lazy-image').attr('data-src').text,
+        url: element.search('a.card__titleLink').attr('href').text,
         cereal: 'corn'
       }
     end

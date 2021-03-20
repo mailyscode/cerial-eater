@@ -66,4 +66,4 @@ const initSearch = () => {
   }
 };
 
-export default initSearch ;
+export { initSearch };
